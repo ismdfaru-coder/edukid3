@@ -1,0 +1,259 @@
+You are a senior product architect, EdTech systems engineer, and curriculum-aware learning scientist.
+
+Your task is to design and implement a full production-ready web platform that replicates the COMPLETE LOGIC, FLOW, AND CONCEPT of the Sumdog learning system (but not branding), covering ONLY UK National Curriculum up to KS3 (explicitly EXCLUDING GCSE / KS4 content).
+
+The system must strictly follow the architecture, behaviour, and pedagogical model described below. Do NOT simplify, skip, or reinterpret any component.
+
+────────────────────────────────
+CORE PRODUCT DEFINITION
+────────────────────────────────
+
+The platform is a GAMIFIED, ADAPTIVE LEARNING SYSTEM for children aged 5–14 with three user roles:
+1. Student
+2. Teacher
+3. Parent
+
+The system is composed of THREE STRICTLY SEPARATED ENGINES:
+1. Authentication & Role Engine
+2. Adaptive Learning Engine (core intelligence)
+3. Game & Motivation Engine (visual wrapper only)
+
+Learning logic MUST be fully independent from games.
+
+────────────────────────────────
+CURRICULUM SCOPE (CRITICAL)
+────────────────────────────────
+
+• UK National Curriculum:
+  - KS1 (ages 5–7)
+  - KS2 (ages 7–11)
+  - KS3 foundations only (ages 11–14)
+
+• Scotland: Curriculum for Excellence support
+• Optional international curriculum mapping
+
+EXPLICITLY EXCLUDE:
+- GCSE / KS4
+- Exam-board alignment (AQA, Edexcel, OCR)
+- Exam-style long answers
+- Grade 1–9 grading
+- Proofs, trigonometry (GCSE depth), method marks
+
+This platform focuses on FOUNDATIONAL SKILL MASTERY, not exam preparation.
+
+────────────────────────────────
+AUTHENTICATION & SESSION LOGIC
+────────────────────────────────
+
+Login methods:
+• Username + password
+• Username + picture-based password (for children)
+
+On login:
+• Validate credentials
+• Resolve role (student / teacher / parent)
+• Issue JWT or session token
+• Track device, IP, last login
+• Load role-specific dashboard
+
+Logout:
+• Invalidate session
+• Persist progress
+• Handle idle timeout safely
+
+────────────────────────────────
+USER PROFILE & PERSONALISATION
+────────────────────────────────
+
+On successful login, load:
+• Age
+• Year group
+• Curriculum
+• Skill mastery vector
+• Historical performance
+• Accuracy, response time, error patterns
+
+Example internal model:
+{
+  userId,
+  role,
+  yearGroup,
+  curriculum,
+  skills: {
+    fractions: mastery_score (0–1),
+    multiplication: mastery_score (0–1),
+    ...
+  }
+}
+
+This profile MUST feed the adaptive engine in real time.
+
+────────────────────────────────
+QUESTION BANK & LEARNING ENGINE
+────────────────────────────────
+
+Design a Question Bank structured as:
+Subject → Topic → Skill → Difficulty → Question
+
+Each question MUST contain:
+• Correct answer
+• Distractors
+• Difficulty score
+• Curriculum tag
+• Skill mapping
+• Metadata for analytics
+
+Adaptive logic MUST consider:
+• Accuracy %
+• Consecutive correct / incorrect streaks
+• Response time
+• Error patterns
+
+Example adaptive behaviour:
+- Increase difficulty after sustained success
+- Decrease difficulty after repeated errors
+- Two students in the same game MUST receive different questions
+
+Skills are tracked as CONTINUOUS VALUES, not pass/fail.
+
+────────────────────────────────
+GAME & GAMIFICATION ENGINE
+────────────────────────────────
+
+Games are VISUAL WRAPPERS ONLY.
+They must NEVER contain learning logic.
+
+Game loop:
+GAME START
+→ request question from learning API
+→ user answers
+→ submit answer
+→ receive correctness + next question
+→ update game progress
+
+Rule:
+NO ANSWER = NO GAME PROGRESS
+
+Rewards system:
+• Coins
+• Pets
+• Clothing
+• House customisation
+
+Rewards must be tied to LEARNING EVENTS, not clicks.
+
+────────────────────────────────
+TEACHER CONTROLS & ASSIGNMENTS
+────────────────────────────────
+
+Teachers can:
+• Create classes
+• Assign topics or skills
+• Set time / question limits
+• Assign to class or individual students
+• Run daily challenges
+• Organise competitions
+
+Assignment logic MUST override adaptive engine scope but NOT disable adaptivity within that scope.
+
+────────────────────────────────
+COMPETITIONS ENGINE
+────────────────────────────────
+
+Competitions must:
+• Use identical topic scope
+• Share question pools
+• Maintain adaptive difficulty per student
+• Score using accuracy, speed, and consistency
+
+Prevent exploitation via easy-question farming.
+
+────────────────────────────────
+REPORTING & ANALYTICS
+────────────────────────────────
+
+Log EVERY EVENT:
+• Question served
+• Answer submitted
+• Correctness
+• Time taken
+• Difficulty level
+• Skill affected
+
+Generate dashboards for:
+• Teachers (full analytics)
+• Parents (read-only insights)
+• Students (motivational summaries)
+
+This analytics layer is a CORE PAID FEATURE.
+
+────────────────────────────────
+PARENT ROLE
+────────────────────────────────
+
+Parents:
+• Link to child account
+• View progress, time spent, weak areas
+• NO ability to control content or questions
+
+────────────────────────────────
+MONETISATION MODEL
+────────────────────────────────
+
+Free Tier:
+• Limited games
+• Basic practice
+• Minimal reporting
+
+Premium Tier (school-paid):
+• Full analytics
+• Assignments
+• Competitions
+• Advanced reporting
+• Homework tools
+
+────────────────────────────────
+TECHNICAL REQUIREMENTS
+────────────────────────────────
+
+Frontend:
+• React (dashboards)
+• Phaser or equivalent (games)
+
+Backend:
+• Node.js or Python
+• REST APIs
+• WebSockets for real-time gameplay
+
+Database:
+• PostgreSQL (core data)
+• Analytics DB (events, logs)
+
+Auth:
+• JWT-based sessions
+
+Architecture MUST enforce:
+• Separation of concerns
+• Replaceable games
+• Curriculum-driven learning logic
+
+────────────────────────────────
+DELIVERABLES REQUIRED
+────────────────────────────────
+
+1. Full system architecture diagram
+2. Database schema (tables, relations)
+3. REST API contracts
+4. Adaptive algorithm pseudocode
+5. Role-based dashboard logic
+6. Example game API integration
+7. Analytics & reporting design
+8. Deployment-ready structure
+
+IMPORTANT:
+• Do NOT include GCSE features
+• Do NOT oversimplify
+• Do NOT merge learning logic with games
+• Design this as a scalable SaaS product
+
+Build this as if it will be used by real UK schools.

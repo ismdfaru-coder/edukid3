@@ -1,0 +1,100 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "sans-serif",
+      "count": 7
+    },
+    {
+      "family": "Open Sans",
+      "count": 6
+    },
+    {
+      "family": "Curse Casual",
+      "count": 6
+    },
+    {
+      "family": "HKGrotesk",
+      "count": 3
+    },
+    {
+      "family": "Arial",
+      "count": 3
+    }
+  ],
+  "colors": {
+    "primary": "#1BAD31",
+    "accent": "#283145",
+    "background": "#F2F0EC",
+    "textPrimary": "#283145",
+    "link": "#283145"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Open Sans",
+      "heading": "Open Sans"
+    },
+    "fontStacks": {
+      "body": [
+        "Open Sans",
+        "sans-serif"
+      ],
+      "heading": [
+        "Open Sans",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Open Sans",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "16px",
+      "h2": "16px",
+      "body": "16px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "10px"
+  },
+  "components": {
+    "input": {
+      "background": "#FFFFFF",
+      "textColor": "#3B3B3B",
+      "borderColor": "#000000",
+      "borderRadius": "0px",
+      "borderRadiusCorners": {
+        "topLeft": "0px",
+        "topRight": "0px",
+        "bottomRight": "0px",
+        "bottomLeft": "0px"
+      },
+      "shadow": "rgba(0, 0, 0, 0.5) 3px 6px 0px 0px"
+    }
+  },
+  "images": {
+    "logo": null,
+    "favicon": null,
+    "ogImage": null
+  },
+  "__framework_hints": [],
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": -1,
+      "text": "N/A",
+      "reasoning": "LLM failed"
+    },
+    "secondary": {
+      "index": -1,
+      "text": "N/A",
+      "reasoning": "LLM failed"
+    },
+    "confidence": 0
+  },
+  "confidence": {
+    "buttons": 0,
+    "colors": 0,
+    "overall": 0
+  }
+}

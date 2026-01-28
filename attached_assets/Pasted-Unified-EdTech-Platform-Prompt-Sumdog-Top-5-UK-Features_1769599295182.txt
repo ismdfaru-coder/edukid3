@@ -1,0 +1,127 @@
+Unified EdTech Platform Prompt (Sumdog + Top 5 UK Features)
+
+You are a senior EdTech product architect, adaptive learning engineer, and UK curriculum specialist.
+
+Task: Design and implement a production-ready web platform that:
+
+Combines full Sumdog logic with features from Mathletics, MyMaths, TT Rockstars, and Kahoot!
+
+Covers KS1–KS3 UK National Curriculum only (exclude GCSE/KS4)
+
+Runs without runtime errors, serving questions immediately and displaying games in real-time
+
+Supports Student, Teacher, Parent roles with dashboards and analytics
+
+Maintains adaptive learning engine separate from game engine
+
+───────────────────────────────
+CORE REQUIREMENTS
+
+Adaptive Learning Engine:
+
+Independent of games
+
+Tracks skills as continuous values
+
+Uses accuracy, streaks, response time, error patterns to adjust difficulty
+
+Supports teacher-assigned topics/skills without disabling adaptivity
+
+Serves questions real-time to multiple students
+
+Game & Gamification Engine:
+
+Visual wrapper only
+
+Displays questions immediately (prevents idle or error states)
+
+Rewards tied to learning events (coins, pets, badges, house customization)
+
+Includes timed fluency games (TT Rockstars-style)
+
+Supports multi-user competitions (Kahoot!-style)
+
+Question Bank:
+
+Structure: Subject → Topic → Skill → Difficulty → Question
+
+Each question contains: correct answer, distractors, difficulty, curriculum tag, skill mapping, analytics metadata
+
+Adaptive logic ensures per-student difficulty, even in group competitions
+
+Teacher Dashboard:
+
+Create/manage classes, assign topics, set limits
+
+Organize competitions and daily challenges
+
+Analytics: skill mastery, streaks, progress trends
+
+Ability to create custom quizzes (Kahoot!-style)
+
+Student Experience:
+
+Personalized avatars and profiles
+
+Game-based practice (Sumdog + TT Rockstars hybrid)
+
+Immediate leaderboard and rewards system
+
+Fluency & timed games visible instantly
+
+Parent Dashboard:
+
+Read-only view of progress, strengths, weaknesses, time spent
+
+Competitions Engine:
+
+Real-time, multi-user adaptive competitions
+
+Scoring: accuracy + speed + consistency
+
+Prevent easy-question exploitation
+
+Technical Stack:
+
+Frontend: React + Phaser (or equivalent)
+
+Backend: Node.js or Python, REST API + WebSockets
+
+Database: PostgreSQL + Analytics DB for events/logs
+
+Auth: JWT-based sessions
+
+Enforce separation of concerns, replaceable games, curriculum-driven learning logic
+
+Monetization:
+
+Free tier: basic games, limited practice
+
+Premium: full analytics, assignments, competitions, advanced reporting
+
+───────────────────────────────
+DELIVERABLES:
+
+Fully production-ready platform
+
+No runtime errors during question answering
+
+Real-time game display with adaptive learning logic
+
+Teacher, Parent, Student dashboards
+
+Analytics & reporting
+
+Timed fluency and multi-user competitions integrated
+
+Scalable SaaS-ready architecture
+
+Constraints:
+
+Exclude GCSE/KS4 entirely
+
+Do not merge learning logic with games
+
+Ensure adaptive engine is real-time and error-resilient
+
+Gamification slightly dominates in style (Sumdog-style)
